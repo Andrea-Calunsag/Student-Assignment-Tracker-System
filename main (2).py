@@ -2,19 +2,27 @@ assignment_list = []
 
 
 def AddAssignment():
-        name = input('Enter assignment name:')
-        
+    while True: 
+        name = input('Enter assignment name:').strip()
+        if name == '':
+            print('Name cannot be empty.')
+        else:
+            break
+    
+    while True:
         subject = input('Enter subject:').strip()
-
+        if subject == '':
+            print('Subject cannot be empty.')
+        else:
+            break
+    
+    
+    while True:
         deadline = input('Enter deadline:').strip()
-        
-    
-    status = 'Not Done'
-    
-    assignment = [name, subject, deadline, status]
-    
-    assignment_list.append(assignment)
-    print('Assignment added successfully!')
+        if deadline == '':
+            print('Deadline cannot be empty.')
+        else:
+            break
     
     
 def ViewAssignments():
