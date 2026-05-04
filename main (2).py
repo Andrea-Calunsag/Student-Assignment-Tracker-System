@@ -1,3 +1,10 @@
+# Program: Student Asignment Tracker System
+# Author: Group 6
+# Subject: Computer Science
+# Description: A Python program that allows users to add, view, and mark assignments as done using finctions, loops, and input validation
+# Date: May 2026
+
+
 #List to store assignments
 assignment_list = []
 
