@@ -37,13 +37,6 @@ def AddAssignment():
     print('Assignment added successfully!')
     
 # Function to display all assignments    
-status = 'Not Done'
-
-    assignment = [name, subject, deadline, status]
-
-    assignment_list.append(assignment)
-    print('Assignment added successfully!')
-    
 def ViewAssignments():
     if len(assignment_list) == 0:
         print('No assignments available.')
