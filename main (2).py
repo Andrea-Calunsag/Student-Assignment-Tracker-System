@@ -40,15 +40,15 @@ def AddAssignment():
 # Function to display all assignments    
 def ViewAssignments():
     # Check if list is empty
-     if len(assignment_list) == 0:
+    if len(assignment_list) == 0:
         print('No assignments available.')
     else:
         counter = 1 # Used to number assignments
 
-         # Loop through each assignment
-         for assignment in assignment_list:
-              # Display assignment details
-              print(f'{counter}: {assignment[0]}, {assignment[1]}, {assignment[2]}, Status: {assignment[3]}')
+        # Loop through each assignment
+        for assignment in assignment_list:
+            # Display assignment details
+            print(f'{counter}: {assignment[0]}, {assignment[1]}, {assignment[2]}, Status: {assignment[3]}')
             counter = counter + 1
 
         
@@ -69,8 +69,8 @@ def MarkAsDone():
             
             # Check if number is within valid range
             if 1 <= number <= len(assignment_list):
-                 # Update status to Done
-                 assignment_list[number - 1][3] = 'Done'
+                # Update status to Done
+                assignment_list[number - 1][3] = 'Done'
                 print('Assignment marked as done')
                 break
             else:
@@ -92,7 +92,7 @@ while True:
      # Get user choice
     choice_input = (input('Enter the number of your choice:'))
 
-    # Validate input (must be an integer)
+    # Validate input (must be a number)
     if choice_input.isdigit():
         choice = int(choice_input)
    
@@ -104,14 +104,14 @@ while True:
             ViewAssignments()
         
         elif choice == 3:
-              MarkAsDone()
+            MarkAsDone()
         
         elif choice == 4:
             print('Exiting program...')
             break # Exit loop
         
         
-        else:
-            print('Invalid choice. Try again.')
+    else:
+        print('Invalid choice. Try again.')
     
     
