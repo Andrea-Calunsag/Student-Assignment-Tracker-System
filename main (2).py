@@ -8,6 +8,13 @@ def AddAssignment():
             print('Name cannot be empty.')
         else:
             break
+
+    status = 'Not Done'
+
+    assignment = [name, subject, deadline, status]
+
+    assignment_list.append(assignment)
+    print('Assignment added successfully!')
     
     while True:
         subject = input('Enter subject:').strip()
