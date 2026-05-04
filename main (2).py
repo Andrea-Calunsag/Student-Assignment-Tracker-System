@@ -10,6 +10,7 @@ def AddAssignment():
             print('Name cannot be empty.')
         else:
             break
+             
      # Get subject (must not be empty)
     while True:
         subject = input('Enter subject:').strip()
@@ -38,12 +39,16 @@ def AddAssignment():
     
 # Function to display all assignments    
 def ViewAssignments():
-    if len(assignment_list) == 0:
+    # Check if list is empty
+     if len(assignment_list) == 0:
         print('No assignments available.')
     else:
-        counter = 1
-        for assignment in assignment_list:
-            print(f'{counter}: {assignment[0]}, {assignment[1]}, {assignment[2]}, Status: {assignment[3]}')
+        counter = 1 # Used to number assignments
+
+         # Loop through each assignment
+         for assignment in assignment_list:
+              # Display assignment details
+              print(f'{counter}: {assignment[0]}, {assignment[1]}, {assignment[2]}, Status: {assignment[3]}')
             counter = counter + 1
 
         
@@ -53,10 +58,10 @@ def MarkAsDone():
     if len(assignment_list) == 0:
         print('No assignments to update.')
         return
-    # Ask user for assignment number    
+        
     while True:
          # Ask user for assignment number
-        number_input = (input('Enter assignment number:'))
+        number_input = input('Enter assignment number:')
         
         # Check if input is a valid number
         if number_input.isdigit():
@@ -64,7 +69,8 @@ def MarkAsDone():
             
             # Check if number is within valid range
             if 1 <= number <= len(assignment_list):
-                assignment_list[number - 1][3] = 'Done'
+                 # Update status to Done
+                 assignment_list[number - 1][3] = 'Done'
                 print('Assignment marked as done')
                 break
             else:
