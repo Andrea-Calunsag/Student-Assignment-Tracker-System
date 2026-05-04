@@ -109,9 +109,13 @@ while True:
         elif choice == 4:
             print('Exiting program...')
             break # Exit loop
+
+        else:
+             print('Invalid choice. Try again.')
+     
         
         
     else:
-        print('Invalid choice. Try again.')
+        print('Please enter a valid number')
     
     
