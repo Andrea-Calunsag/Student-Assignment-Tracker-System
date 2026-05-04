@@ -1,14 +1,16 @@
+#List to store assignments
 assignment_list = []
 
-
+# Function to add a new assignment
 def AddAssignment():
+     # Get assignment name (must not be empty)
     while True: 
         name = input('Enter assignment name:').strip()
         if name == '':
             print('Name cannot be empty.')
         else:
             break
-    
+     # Get subject (must not be empty)
     while True:
         subject = input('Enter subject:').strip()
         if subject == '':
@@ -16,15 +18,26 @@ def AddAssignment():
         else:
             break
     
-    
+    # Get deadline (must not be empty)
     while True:
         deadline = input('Enter deadline:').strip()
         if deadline == '':
             print('Deadline cannot be empty.')
         else:
             break
-    
+
+    # Default status of assignment
     status = 'Not Done'
+    
+    # Store assignment details in a list
+    assignment = [name, subject, deadline, status]
+    
+    # Add assignment to main list
+    assignment_list.append(assignment)
+    print('Assignment added successfully!')
+    
+# Function to display all assignments    
+status = 'Not Done'
 
     assignment = [name, subject, deadline, status]
 
@@ -41,18 +54,22 @@ def ViewAssignments():
             counter = counter + 1
 
         
-
+# Function to mark an assignment as done
 def MarkAsDone():
+    # Check if there are assignments to update
     if len(assignment_list) == 0:
         print('No assignments to update.')
         return
-        
+    # Ask user for assignment number    
     while True:
+         # Ask user for assignment number
         number_input = (input('Enter assignment number:'))
         
+        # Check if input is a valid number
         if number_input.isdigit():
             number = int(number_input)
             
+            # Check if number is within valid range
             if 1 <= number <= len(assignment_list):
                 assignment_list[number - 1][3] = 'Done'
                 print('Assignment marked as done')
@@ -65,19 +82,22 @@ def MarkAsDone():
     
 
 
-
+#MAIN PROGRAM LOOP (menu system)
 while True:
     print('\n-----MENU-----')
     print('1. Add Assignment')
     print('2. View Assignments')
     print('3. Mark as Done')
     print('4. Exit')
-    
+
+     # Get user choice
     choice_input = (input('Enter the number of your choice:'))
-    
+
+    # Validate input (must be an integer)
     if choice_input.isdigit():
         choice = int(choice_input)
-        
+   
+        # Perform action based on user choice    
         if choice == 1:
             AddAssignment()
         
@@ -89,7 +109,7 @@ while True:
         
         elif choice == 4:
             print('Exiting program...')
-            break
+            break # Exit loop
         
         
         else:
